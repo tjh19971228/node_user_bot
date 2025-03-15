@@ -2,8 +2,8 @@
   "name": "node-user-bot",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,8 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inline": "^0.0.2",
-    "input": "^1.0.1",
-    "telegram": "^2.26.22"
+    "telegram": "^2.26.22",
+    "inquirer": "^9.2.15"
   }
 }
