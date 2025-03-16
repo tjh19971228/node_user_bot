@@ -1,17 +1,34 @@
 {
   "name": "node-user-bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "Telegram user bot CLI tool",
   "type": "module",
-  "main": "index.js",
+  "main": "main.js",
+  "bin": {
+    "tg-bot": "./main.js"
+  },
   "scripts": {
+    "start": "node main.js",
+    "build": "pkg . --out-path dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "pkg": {
+    "targets": ["node18-win-x64"],
+    "outputPath": "dist",
+    "assets": [
+      "src/**/*",
+      "data/**/*",
+      "message/**/*"
+    ]
+  },
+  "keywords": ["telegram", "bot", "cli"],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "telegram": "^2.26.22",
     "inquirer": "^9.2.15"
+  },
+  "devDependencies": {
+    "pkg": "^5.8.1"
   }
 }
