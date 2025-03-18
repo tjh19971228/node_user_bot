@@ -1,4 +1,10 @@
-import { telegramClient, Menu, Handle } from "./src/telegram/index.js";
+import {
+  telegramClient,
+  Menu,
+  Handle,
+  Listener,
+  ChatRecord,
+} from "./src/telegram/index.js";
 import { logger } from "./src/utils/index.js";
 import { handleLogin } from "./src/auth/login.js";
 
@@ -12,12 +18,23 @@ async function main() {
 
   const menu = new Menu();
   const selectedMenu = await menu.getSelectedMenu();
-  if (selectedMenu === "群发消息") {
-    const handle = new Handle(client);
-    await handle.handleSendGroupMessage();
-  } else {
-    const handle = new Handle(client);
-    await handle.handleForwardMessage();
+  const handle = new Handle(client);
+
+  switch (selectedMenu) {
+    case "群发消息":
+      await handle.handleSendGroupMessage();
+      break;
+    case "监听并转发消息":
+      await handle.handleForwardMessage();
+      break;
+    case "监听频道":
+      const listener = new Listener(client);
+      await listener.listenToChannel();
+      break;
+    case "查看群组视频消息":
+      const chatRecord = new ChatRecord(client);
+      await chatRecord.getGroupAllVideoChatRecord();
+      break;
   }
 }
 

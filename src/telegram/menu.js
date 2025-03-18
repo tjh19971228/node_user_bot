@@ -2,7 +2,7 @@ import inquirer from "inquirer";
 
 class Menu {
   constructor() {
-    this.menu = ["群发消息", "监听并转发消息"];
+    this.menu = ["群发消息", "监听并转发消息", "监听频道", "查看群组视频消息"];
   }
 
   async getSelectedMenu() {

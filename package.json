@@ -13,7 +13,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "pkg": {
-    "targets": ["node18-win-x64"],
+    "targets": [
+      "node18-win-x64"
+    ],
     "outputPath": "dist",
     "assets": [
       "src/**/*",
@@ -21,12 +23,17 @@
       "message/**/*"
     ]
   },
-  "keywords": ["telegram", "bot", "cli"],
+  "keywords": [
+    "telegram",
+    "bot",
+    "cli"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "telegram": "^2.26.22",
-    "inquirer": "^9.2.15"
+    "cli-progress": "^3.12.0",
+    "inquirer": "^9.2.15",
+    "telegram": "^2.26.22"
   },
   "devDependencies": {
     "pkg": "^5.8.1"
